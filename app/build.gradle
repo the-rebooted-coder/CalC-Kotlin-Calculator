@@ -47,4 +47,5 @@ dependencies {
 
     //Lottie Animations
     implementation "com.airbnb.android:lottie:3.4.0"
+    implementation("com.fathzer:javaluator:3.0.3")
 }

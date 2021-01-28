@@ -13,41 +13,26 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
-
-    <!-- ActionButtonStyle for keys "CLEAR" and "/". -->
-    <style name="ActionButtonStyle">
-    <item name="android:layout_width">0dp</item>
-    <item name="android:layout_height">match_parent</item>
-    <item name="android:layout_weight">1</item>
-    <item name="android:background">@color/actionButton</item>
-    <item name = "android:textSize">21sp</item>
-    <item name="android:textColor">@android:color/white</item>
-    <item name="android:gravity">center</item>
-    <item name="android:layout_margin">0.5dp</item>
+    <style name="result_style">
+        <item name="android:layout_row">0</item>
+        <item name="android:layout_rowSpan">2</item>
+        <item name="android:layout_rowWeight">2</item>
+        <item name="android:layout_column">0</item>
+        <item name= "android:layout_columnSpan">4</item>
+        <item name= "android:gravity">bottom|right</item>
+        <item name="android:text">12345</item>
+        <item name= "android:textSize">50sp</item>
+        <item name="android:background">@color/purple_200</item>
     </style>
 
-    <!-- EqualButtonStyle for key "=". -->
-    <style name="EqualButtonStyle">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">match_parent</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:background">@color/equalButton</item>
-        <item name = "android:textSize">21sp</item>
-        <item name="android:textColor">@android:color/white</item>
-        <item name="android:gravity">center</item>
-        <item name="android:layout_margin">0.5dp</item>
+    <style name="cell_style">
+        <item name="android:layout_rowWeight">1</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name= "android:gravity">fill</item>
+        <item name= "android:textSize">35sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:background">#e1eced</item>
+        <item name="android:layout_margin">1dp</item>
+        <item name="android:onClick">onClick</item>
     </style>
-
-    <!-- NumberActionButton2 for keys "*", "-", "+". -->
-    <style name="NumberActionButton2">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">match_parent</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:background">@color/numberActionButton2</item>
-        <item name ="android:textSize">21sp</item>
-        <item name="android:textColor">@android:color/white</item>
-        <item name="android:gravity">center</item>
-        <item name="android:layout_margin">0.5dp</item>
-    </style>
-
 </resources>
