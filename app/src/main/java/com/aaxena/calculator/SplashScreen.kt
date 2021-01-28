@@ -7,7 +7,7 @@ import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 
 class SplashScreen : AppCompatActivity() {
-    private val SPLASH_SCREEN_TIME_OUT:Long = 1000
+    private val splash:Long = 1000
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.splash_screen)
@@ -17,8 +17,8 @@ class SplashScreen : AppCompatActivity() {
             // Start your app main activity
             val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
-            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
             finish()
-        }, SPLASH_SCREEN_TIME_OUT)
-        }
+        }, splash)
+    }
 }
