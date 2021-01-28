@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "29190565119",
+    "project_id": "kotlin-calculator-26b1f",
+    "storage_bucket": "kotlin-calculator-26b1f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:29190565119:android:f7e78c84dd6d5179bff0ca",
+        "android_client_info": {
+          "package_name": "com.aaxena.calculator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "29190565119-l8l8gu1q7n8767kut5qcdh0056765tb2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASjPjdQJyHZ2mgF55ZfaRciXNtLeCvMD8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "29190565119-l8l8gu1q7n8767kut5qcdh0056765tb2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
