@@ -1,12 +1,13 @@
 package com.aaxena.calculator
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Context
+import android.os.Build
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
+import android.os.VibrationEffect
+import android.os.Vibrator
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import net.objecthunter.exp4j.ExpressionBuilder
-import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,20 +54,28 @@ class MainActivity : AppCompatActivity() {
                 val result = expression.evaluate()
                 val longResult = result.toLong()
                 if (result == longResult.toDouble()) {
-                    Toast.makeText(this, "Double", Toast.LENGTH_SHORT).show()
+                    vibratePhone()
                     answer.text = longResult.toString()
                 } else
+                    vibratePhone()
                     answer.text = result.toString()
 
             } catch (e: Exception) {
-                Toast.makeText(this, e.message, Toast.LENGTH_SHORT).show();
 
-                Log.d("EXCEPTION", "Message: ${e.message}")
             }
 
         }
 
 
+    }
+
+    fun vibratePhone() {
+        val vibrator = this.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        if (Build.VERSION.SDK_INT >= 26) {
+            vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.EFFECT_CLICK))
+        } else {
+            vibrator.vibrate(20)
+        }
     }
 
     fun appendVal(string: String, isClear: Boolean) {
