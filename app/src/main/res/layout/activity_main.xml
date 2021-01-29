@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="30sp"
-        android:layout_marginRight="10sp"
+        android:layout_marginEnd="10sp"
         android:layout_weight="1"
         android:fontFamily="@font/productsans"
         android:gravity="end"
@@ -23,7 +23,7 @@
         android:id="@+id/answer"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginRight="10sp"
+        android:layout_marginEnd="10sp"
         android:layout_weight="1"
         android:fontFamily="@font/productsansbold"
         android:gravity="end"
@@ -42,7 +42,7 @@
             style="@style/ActionButtonStyle"
             android:background="@drawable/background_button"
             android:fontFamily="@font/productsansbold"
-            android:text="AC" />
+            android:text="@string/ac" />
 
 
         <TextView
@@ -50,7 +50,7 @@
             style="@style/ActionButtonStyle"
             android:background="@drawable/background_button"
             android:fontFamily="@font/productsansbold"
-            android:text="(" />
+            android:text="@string/bracket_left" />
 
 
         <TextView
@@ -58,7 +58,7 @@
             style="@style/ActionButtonStyle"
             android:background="@drawable/background_button"
             android:fontFamily="@font/productsansbold"
-            android:text=")" />
+            android:text="@string/bracket_right" />
 
 
         <TextView
@@ -66,7 +66,7 @@
             style="@style/ActionButtonStyle"
             android:background="@drawable/background_button_expressions"
             android:fontFamily="@font/productsansbold"
-            android:text="/" />
+            android:text="@string/divide" />
 
     </LinearLayout>
 
@@ -81,7 +81,7 @@
             style="@style/NumberButtonStyle"
             android:background="@drawable/oval_light_blue_bg"
             android:fontFamily="@font/productsans"
-            android:text="7" />
+            android:text="@string/_7" />
 
 
         <TextView
@@ -89,7 +89,7 @@
             style="@style/NumberButtonStyle"
             android:background="@drawable/oval_light_blue_bg"
             android:fontFamily="@font/productsans"
-            android:text="8" />
+            android:text="@string/_8" />
 
 
         <TextView
@@ -97,7 +97,7 @@
             style="@style/NumberButtonStyle"
             android:background="@drawable/oval_light_blue_bg"
             android:fontFamily="@font/productsans"
-            android:text="9" />
+            android:text="@string/_9" />
 
 
         <TextView
@@ -105,7 +105,7 @@
             style="@style/ActionButtonStyle"
             android:background="@drawable/background_button_expressions"
             android:fontFamily="@font/productsansbold"
-            android:text="*" />
+            android:text="@string/multiply" />
 
     </LinearLayout>
     <LinearLayout
@@ -119,7 +119,7 @@
             style="@style/NumberButtonStyle"
             android:background="@drawable/oval_light_blue_bg"
             android:fontFamily="@font/productsans"
-            android:text="4" />
+            android:text="@string/_4" />
 
 
         <TextView
@@ -127,7 +127,7 @@
             style="@style/NumberButtonStyle"
             android:background="@drawable/oval_light_blue_bg"
             android:fontFamily="@font/productsans"
-            android:text="5" />
+            android:text="@string/_5" />
 
 
         <TextView
@@ -135,7 +135,7 @@
             style="@style/NumberButtonStyle"
             android:background="@drawable/oval_light_blue_bg"
             android:fontFamily="@font/productsans"
-            android:text="6" />
+            android:text="@string/_6" />
 
 
         <TextView
@@ -143,7 +143,7 @@
             style="@style/ActionButtonStyle"
             android:background="@drawable/background_button_expressions"
             android:fontFamily="@font/productsansbold"
-            android:text="-" />
+            android:text="@string/minus" />
 
     </LinearLayout>
     <LinearLayout
@@ -157,7 +157,7 @@
             style="@style/NumberButtonStyle"
             android:background="@drawable/oval_light_blue_bg"
             android:fontFamily="@font/productsans"
-            android:text="1" />
+            android:text="@string/_1" />
 
 
         <TextView
@@ -165,7 +165,7 @@
             style="@style/NumberButtonStyle"
             android:background="@drawable/oval_light_blue_bg"
             android:fontFamily="@font/productsans"
-            android:text="2" />
+            android:text="@string/_2" />
 
 
         <TextView
@@ -173,7 +173,7 @@
             style="@style/NumberButtonStyle"
             android:background="@drawable/oval_light_blue_bg"
             android:fontFamily="@font/productsans"
-            android:text="3" />
+            android:text="@string/_3" />
 
 
         <TextView
@@ -181,7 +181,7 @@
             style="@style/ActionButtonStyle"
             android:background="@drawable/background_button_expressions"
             android:fontFamily="@font/productsansbold"
-            android:text="+" />
+            android:text="@string/plus" />
 
     </LinearLayout>
     <LinearLayout
@@ -197,7 +197,7 @@
             android:background="@drawable/oval_light_blue_bg"
             android:fontFamily="@font/productsans"
             android:paddingStart="40dp"
-            android:text="0"
+            android:text="@string/_0"
             android:textAlignment="textStart" />
 
         <TextView
@@ -205,7 +205,7 @@
             style="@style/NumberButtonStyle"
             android:background="@drawable/oval_light_blue_bg"
             android:fontFamily="@font/productsansbold"
-            android:text="." />
+            android:text="@string/decimal" />
 
 
         <TextView
@@ -213,7 +213,7 @@
             style="@style/ActionButtonStyle"
             android:background="@drawable/background_button_expressions"
             android:fontFamily="@font/productsansbold"
-            android:text="=" />
+            android:text="@string/euqals" />
 
     </LinearLayout>
 
