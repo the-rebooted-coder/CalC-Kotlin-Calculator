@@ -9,7 +9,6 @@
         android:id="@+id/placeholder"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="30sp"
         android:layout_marginRight="10sp"
         android:layout_weight="1"
         android:fontFamily="@font/productsans"
@@ -17,7 +16,7 @@
         android:singleLine="true"
         android:text=""
         android:textColor="@color/white"
-        android:textSize="38sp" />
+        android:textSize="35sp" />
 
     <TextView
         android:id="@+id/answer"
@@ -193,7 +192,7 @@
         <TextView
             android:id="@+id/num0"
             style="@style/NumberButtonStyle"
-            android:layout_width="95dp"
+            android:layout_width="175dp"
             android:background="@drawable/oval_light_blue_bg"
             android:fontFamily="@font/productsans"
             android:paddingStart="40dp"
