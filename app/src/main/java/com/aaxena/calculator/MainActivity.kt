@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-    public fun isOperator(c: Char): Boolean {
+    private fun isOperator(c: Char): Boolean {
         when(c){
             'x', '*', '×', '/', '+', '-' -> { return true}
             else -> return false

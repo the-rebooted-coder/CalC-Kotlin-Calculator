@@ -22,10 +22,11 @@
         <item name= "android:gravity">bottom|right</item>
         <item name="android:text">12345</item>
         <item name= "android:textSize">50sp</item>
-        <item name="android:background">@color/purple_200</item>
+        <item name="android:background">@color/black</item>
     </style>
 
     <style name="cell_style">
+
         <item name="android:layout_rowWeight">1</item>
         <item name="android:layout_columnWeight">1</item>
         <item name= "android:gravity">fill</item>
