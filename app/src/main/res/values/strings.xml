@@ -19,4 +19,5 @@
     <string name="_0">0</string>
     <string name="euqals">=</string>
     <string name="decimal">.</string>
+    <string name="error">Error</string>
 </resources>

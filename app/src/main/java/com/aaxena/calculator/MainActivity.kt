@@ -1,15 +1,19 @@
 package com.aaxena.calculator
 
 import android.content.Context
-import android.os.Build
 import android.os.Bundle
-import android.os.VibrationEffect
 import android.os.Vibrator
+import android.view.KeyEvent
+import android.widget.Toast
+import android.widget.Toast.LENGTH_SHORT
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import net.objecthunter.exp4j.ExpressionBuilder
 
+
 class MainActivity : AppCompatActivity() {
+    val SHARED_PREFS = "sharedPrefs"
+    val TEXT = "text"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -62,30 +66,75 @@ class MainActivity : AppCompatActivity() {
                 if (result == longResult.toDouble()) {
                     vibratePhone()
                     answer.text = longResult.toString()
-                } else
+                }
+                else
                     vibratePhone()
                     answer.text = result.toString()
 
             } catch (e: Exception) {
-
+                answer.text = getString(R.string.error)
             }
-
         }
+    }
 
-
+    override fun dispatchKeyEvent(event: KeyEvent): Boolean {
+        val action: Int = event.getAction()
+        val keyCode: Int = event.getKeyCode()
+        return when (keyCode) {
+            KeyEvent.KEYCODE_VOLUME_UP -> {
+                if (action == KeyEvent.ACTION_UP) {
+                    vibratePhoneLightly()
+                    val sharedPreferences =
+                        getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE)
+                    val editor = sharedPreferences.edit()
+                    editor.putString(TEXT,"on");
+                    editor.commit();
+                    Toast.makeText(this,"Haptics Turned On",LENGTH_SHORT).show()
+                }
+                true
+            }
+            KeyEvent.KEYCODE_VOLUME_DOWN -> {
+                if (action == KeyEvent.ACTION_DOWN) {
+                    vibratePhoneLightly()
+                    val sharedPreferences =
+                        getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE)
+                    val editor = sharedPreferences.edit()
+                    editor.putString(TEXT,"off");
+                    editor.commit();
+                    Toast.makeText(this,"Haptics Turned Off",LENGTH_SHORT).show()
+                }
+                true
+            }
+            else -> super.dispatchKeyEvent(event)
+        }
     }
 
     fun vibratePhoneLightly() {
-        val vibrator = this.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        val sharedPreferences =
+            getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE)
+        val saving_as: String? = sharedPreferences.getString(TEXT, "")
+        if (saving_as.equals("on")) {
+            val vibrator = this.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
             vibrator.vibrate(15)
+        }
+        else{
+            val vibrator = this.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+            vibrator.vibrate(0)
+        }
+
     }
 
     fun vibratePhone() {
-        val vibrator = this.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
-        if (Build.VERSION.SDK_INT >= 26) {
-            vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.EFFECT_CLICK))
-        } else {
+        val sharedPreferences =
+            getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE)
+        val saving_as: String? = sharedPreferences.getString(TEXT, "")
+        if (saving_as.equals("on")) {
+            val vibrator = this.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
             vibrator.vibrate(20)
+        }
+        else{
+            val vibrator = this.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+            vibrator.vibrate(0)
         }
     }
 
