@@ -6,6 +6,7 @@ import android.os.Vibrator
 import android.view.KeyEvent
 import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import net.objecthunter.exp4j.ExpressionBuilder
@@ -18,6 +19,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+        if (isFirstTime()) {
+            val dialogBuilder = AlertDialog.Builder(this)
+            dialogBuilder.setMessage("Press the Volume Up and Down buttons to Enable or Disable Button Vibrations")
+                // if the dialog is cancelable
+                .setCancelable(false)
+                .setPositiveButton("Okay!") { dialog, id ->
+                    dialog.dismiss()
+                }
+            val alert = dialogBuilder.create()
+            alert.setTitle("Button Haptics")
+            alert.show()
+        }
 
         //Numbers
         num0.setOnClickListener { appendVal("0", false)
@@ -146,5 +160,15 @@ class MainActivity : AppCompatActivity() {
             placeholder.append(string)
         }
     }
-
+    private fun isFirstTime(): Boolean {
+        val preferences = getPreferences(Context.MODE_PRIVATE)
+        val ranBefore = preferences.getBoolean("RanBefore", false)
+        if (!ranBefore) {
+            // first time
+            val editor = preferences.edit()
+            editor.putBoolean("RanBefore", true)
+            editor.commit()
+        }
+        return !ranBefore
+    }
 }
