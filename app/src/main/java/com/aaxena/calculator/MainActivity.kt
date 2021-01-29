@@ -126,7 +126,7 @@ class MainActivity : AppCompatActivity() {
     fun vibratePhoneLightly() {
         val sharedPreferences =
             getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE)
-        val saving_as: String? = sharedPreferences.getString(TEXT, "")
+        val saving_as: String? = sharedPreferences.getString(TEXT, "on")
         if (saving_as.equals("on")) {
             val vibrator = this.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
             vibrator.vibrate(15)
@@ -141,7 +141,7 @@ class MainActivity : AppCompatActivity() {
     fun vibratePhone() {
         val sharedPreferences =
             getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE)
-        val saving_as: String? = sharedPreferences.getString(TEXT, "")
+        val saving_as: String? = sharedPreferences.getString(TEXT, "on")
         if (saving_as.equals("on")) {
             val vibrator = this.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
             vibrator.vibrate(20)
