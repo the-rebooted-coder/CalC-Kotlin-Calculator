@@ -8,7 +8,6 @@
     <string name="_8">8</string>
     <string name="multiply">*</string>
     <string name="_9">9</string>
-    <string name="app_dev_name">App Developed By One Silicon Diode ;)</string>
     <string name="app_shortcut_desc">OneSDiode</string>
     <string name="_4">4</string>
     <string name="_5">5</string>
@@ -22,4 +21,8 @@
     <string name="euqals">=</string>
     <string name="decimal">.</string>
     <string name="error">Error</string>
+    <string name="the_calc_project">The CalC Project</string>
+    <string name="app_logo">app logo</string>
+    <string name="about">This Application was Created Out of the developer\'s curiosity towards Kotlin.\n\nIt is fully open source and can be found on github at:\n\nhttps://github.com/the-rebooted-coder/Friendly-Kotlin-Calculator</string>
+    <string name="opening">Open Calculator</string>
 </resources>

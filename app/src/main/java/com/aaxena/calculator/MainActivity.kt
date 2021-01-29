@@ -1,7 +1,10 @@
 package com.aaxena.calculator
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.os.Vibrator
 import android.view.KeyEvent
 import android.widget.Toast
@@ -110,12 +113,16 @@ class MainActivity : AppCompatActivity() {
             KeyEvent.KEYCODE_VOLUME_DOWN -> {
                 if (action == KeyEvent.ACTION_DOWN) {
                     vibratePhoneLightly()
-                    val sharedPreferences =
-                        getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE)
-                    val editor = sharedPreferences.edit()
-                    editor.putString(TEXT,"off");
-                    editor.commit();
-                    Toast.makeText(this,"Haptics Turned Off",LENGTH_SHORT).show()
+                    val delay:Long = 100
+                    Handler(Looper.getMainLooper()).postDelayed({
+                       vibratePhone()
+                        val sharedPreferences =
+                            getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE)
+                        val editor = sharedPreferences.edit()
+                        editor.putString(TEXT,"off");
+                        editor.commit()
+                        Toast.makeText(this,"Haptics Turned Off",LENGTH_SHORT).show()
+                    }, delay)
                 }
                 true
             }

@@ -4,12 +4,12 @@
         android:enabled="true"
         android:icon="@drawable/app_dev"
         android:shortcutId="app_developer"
-        android:shortcutLongLabel="@string/app_dev_name"
+        android:shortcutLongLabel="@string/app_shortcut_desc"
         android:shortcutShortLabel="@string/app_shortcut_desc">
 
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetClass="com.aaxena.calculator.MainActivity"
+            android:targetClass="com.aaxena.calculator.OneSiliconDiode"
             android:targetPackage="com.aaxena.calculator"/>
     </shortcut>
 
