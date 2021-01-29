@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/app_dev"
+        android:shortcutId="app_developer"
+        android:shortcutLongLabel="@string/app_dev_name"
+        android:shortcutShortLabel="@string/app_shortcut_desc">
+
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.aaxena.calculator.MainActivity"
+            android:targetPackage="com.aaxena.calculator"/>
+    </shortcut>
+
+</shortcuts>
