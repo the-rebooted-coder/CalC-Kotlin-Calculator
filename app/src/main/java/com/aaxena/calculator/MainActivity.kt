@@ -1,7 +1,7 @@
 package com.aaxena.calculator
 
 import android.content.Context
-import android.content.Intent
+import android.content.IntentSender.SendIntentException
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -11,6 +11,13 @@ import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.play.core.appupdate.AppUpdateManager
+import com.google.android.play.core.appupdate.AppUpdateManagerFactory
+import com.google.android.play.core.install.InstallState
+import com.google.android.play.core.install.InstallStateUpdatedListener
+import com.google.android.play.core.install.model.AppUpdateType
+import com.google.android.play.core.install.model.InstallStatus
+import com.google.android.play.core.install.model.UpdateAvailability
 import kotlinx.android.synthetic.main.activity_main.*
 import net.objecthunter.exp4j.ExpressionBuilder
 
@@ -18,6 +25,8 @@ import net.objecthunter.exp4j.ExpressionBuilder
 class MainActivity : AppCompatActivity() {
     val SHARED_PREFS = "sharedPrefs"
     val TEXT = "text"
+    private var mAppUpdateManager: AppUpdateManager? = null
+    private val RC_APP_UPDATE = 11
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -177,5 +186,32 @@ class MainActivity : AppCompatActivity() {
             editor.commit()
         }
         return !ranBefore
+    }
+    override fun onStart() {
+        super.onStart()
+        mAppUpdateManager = AppUpdateManagerFactory.create(this)
+        mAppUpdateManager!!.registerListener(installStateUpdatedListener)
+        mAppUpdateManager!!.getAppUpdateInfo().addOnSuccessListener { appUpdateInfo ->
+            if (appUpdateInfo.updateAvailability() === UpdateAvailability.UPDATE_AVAILABLE
+                    && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.FLEXIBLE /*AppUpdateType.IMMEDIATE*/)) {
+                try {
+                    mAppUpdateManager!!.startUpdateFlowForResult(
+                            appUpdateInfo, AppUpdateType.FLEXIBLE /*AppUpdateType.IMMEDIATE*/, this, RC_APP_UPDATE)
+                } catch (e: SendIntentException) {
+                    e.printStackTrace()
+                }
+            } else {
+            }
+        }
+    }
+
+    var installStateUpdatedListener: InstallStateUpdatedListener = object : InstallStateUpdatedListener {
+        override fun onStateUpdate(state: InstallState) {
+            if (state.installStatus() === InstallStatus.INSTALLED) {
+                mAppUpdateManager?.unregisterListener(this)
+            } else {
+                //App Is Fully Updated Nothing To Do, Continuing Normal WorkFlow but do not erase the else func
+            }
+        }
     }
 }
