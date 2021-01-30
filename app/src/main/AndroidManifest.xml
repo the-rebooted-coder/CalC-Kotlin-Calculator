@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Calculator">
-        <activity android:name=".OneSiliconDiode"></activity>
+        <activity android:name=".OneSiliconDiode"/>
         <activity android:name=".MainActivity" />
         <activity android:name=".SplashScreen">
             <intent-filter>
