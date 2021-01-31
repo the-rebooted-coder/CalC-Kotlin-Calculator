@@ -2,10 +2,7 @@ package com.aaxena.calculator
 
 import android.content.Context
 import android.content.IntentSender.SendIntentException
-import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import android.os.Vibrator
+import android.os.*
 import android.view.KeyEvent
 import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
@@ -145,7 +142,12 @@ class MainActivity : AppCompatActivity() {
         val saving_as: String? = sharedPreferences.getString(TEXT, "on")
         if (saving_as.equals("on")) {
             val vibrator = this.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
-            vibrator.vibrate(15)
+            if (Build.VERSION.SDK_INT >= 26) {
+                vibrator.vibrate(VibrationEffect.createOneShot(25, VibrationEffect.DEFAULT_AMPLITUDE))
+            }
+            else {
+                vibrator.vibrate(15)
+            }
         }
         else{
             val vibrator = this.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
@@ -160,7 +162,12 @@ class MainActivity : AppCompatActivity() {
         val saving_as: String? = sharedPreferences.getString(TEXT, "on")
         if (saving_as.equals("on")) {
             val vibrator = this.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
-            vibrator.vibrate(20)
+            if (Build.VERSION.SDK_INT >= 26) {
+                vibrator.vibrate(VibrationEffect.createOneShot(30, VibrationEffect.DEFAULT_AMPLITUDE))
+            }
+            else {
+                vibrator.vibrate(20)
+            }
         }
         else{
             val vibrator = this.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
