@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/placeholder"
+                android:layout_width="match_parent"
+                android:fontFamily="@font/productsans"
+                android:gravity="end"
+                android:singleLine="false"
+                android:textColor="@color/white"
+                android:textSize="38sp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/answer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginEnd="10sp"
+        android:layout_weight="1"
+        android:fontFamily="@font/productsansbold"
+        android:gravity="end"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="45sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/clear"
+            style="@style/ActionButtonStyle"
+            android:background="@drawable/background_button"
+            android:fontFamily="@font/productsansbold"
+            android:text="@string/ac" />
+
+
+        <TextView
+            android:id="@+id/startBracket"
+            style="@style/ActionButtonStyle"
+            android:background="@drawable/background_button"
+            android:fontFamily="@font/productsansbold"
+            android:text="@string/bracket_left" />
+
+
+        <TextView
+            android:id="@+id/closeBracket"
+            style="@style/ActionButtonStyle"
+            android:background="@drawable/background_button"
+            android:fontFamily="@font/productsansbold"
+            android:text="@string/bracket_right" />
+
+
+        <TextView
+            android:id="@+id/actionDivide"
+            style="@style/ActionButtonStyle"
+            android:background="@drawable/background_button_expressions"
+            android:fontFamily="@font/productsansbold"
+            android:text="@string/divide" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/num7"
+            style="@style/NumberButtonStyle"
+            android:background="@drawable/oval_light_blue_bg"
+            android:fontFamily="@font/productsans"
+            android:text="@string/_7" />
+
+
+        <TextView
+            android:id="@+id/num8"
+            style="@style/NumberButtonStyle"
+            android:background="@drawable/oval_light_blue_bg"
+            android:fontFamily="@font/productsans"
+            android:text="@string/_8" />
+
+
+        <TextView
+            android:id="@+id/num9"
+            style="@style/NumberButtonStyle"
+            android:background="@drawable/oval_light_blue_bg"
+            android:fontFamily="@font/productsans"
+            android:text="@string/_9" />
+
+
+        <TextView
+            android:id="@+id/actionMultiply"
+            style="@style/ActionButtonStyle"
+            android:background="@drawable/background_button_expressions"
+            android:fontFamily="@font/productsansbold"
+            android:text="@string/multiply" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/num4"
+            style="@style/NumberButtonStyle"
+            android:background="@drawable/oval_light_blue_bg"
+            android:fontFamily="@font/productsans"
+            android:text="@string/_4" />
+
+
+        <TextView
+            android:id="@+id/num5"
+            style="@style/NumberButtonStyle"
+            android:background="@drawable/oval_light_blue_bg"
+            android:fontFamily="@font/productsans"
+            android:text="@string/_5" />
+
+
+        <TextView
+            android:id="@+id/num6"
+            style="@style/NumberButtonStyle"
+            android:background="@drawable/oval_light_blue_bg"
+            android:fontFamily="@font/productsans"
+            android:text="@string/_6" />
+
+
+        <TextView
+            android:id="@+id/actionMinus"
+            style="@style/ActionButtonStyle"
+            android:background="@drawable/background_button_expressions"
+            android:fontFamily="@font/productsansbold"
+            android:text="@string/minus" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/num1"
+            style="@style/NumberButtonStyle"
+            android:background="@drawable/oval_light_blue_bg"
+            android:fontFamily="@font/productsans"
+            android:text="@string/_1" />
+
+
+        <TextView
+            android:id="@+id/num2"
+            style="@style/NumberButtonStyle"
+            android:background="@drawable/oval_light_blue_bg"
+            android:fontFamily="@font/productsans"
+            android:text="@string/_2" />
+
+
+        <TextView
+            android:id="@+id/num3"
+            style="@style/NumberButtonStyle"
+            android:background="@drawable/oval_light_blue_bg"
+            android:fontFamily="@font/productsans"
+            android:text="@string/_3" />
+
+
+        <TextView
+            android:id="@+id/actionAdd"
+            style="@style/ActionButtonStyle"
+            android:background="@drawable/background_button_expressions"
+            android:fontFamily="@font/productsansbold"
+            android:text="@string/plus" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/num0"
+            style="@style/NumberButtonStyle"
+            android:layout_width="95dp"
+            android:background="@drawable/oval_light_blue_bg"
+            android:fontFamily="@font/productsans"
+            android:paddingStart="40dp"
+            android:text="@string/_0"
+            android:textAlignment="textStart" />
+
+        <TextView
+            android:id="@+id/numDot"
+            style="@style/NumberButtonStyle"
+            android:background="@drawable/oval_light_blue_bg"
+            android:fontFamily="@font/productsansbold"
+            android:text="@string/decimal" />
+
+
+        <TextView
+            android:id="@+id/actionEquals"
+            style="@style/ActionButtonStyle"
+            android:background="@drawable/background_button_expressions"
+            android:fontFamily="@font/productsansbold"
+            android:text="@string/euqals" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
