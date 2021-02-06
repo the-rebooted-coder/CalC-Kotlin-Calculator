@@ -13,7 +13,7 @@ android {
         applicationId "com.aaxena.calculator"
         minSdkVersion 23
         targetSdkVersion 30
-        versionCode 2
+        versionCode 3
         versionName "Aryabhata"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

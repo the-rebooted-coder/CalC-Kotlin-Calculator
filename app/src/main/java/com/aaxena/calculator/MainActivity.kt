@@ -146,7 +146,7 @@ class MainActivity : AppCompatActivity() {
                 vibrator.vibrate(VibrationEffect.createOneShot(25, VibrationEffect.DEFAULT_AMPLITUDE))
             }
             else {
-                vibrator.vibrate(15)
+                vibrator.vibrate(20)
             }
         }
         else{
@@ -166,7 +166,7 @@ class MainActivity : AppCompatActivity() {
                 vibrator.vibrate(VibrationEffect.createOneShot(30, VibrationEffect.DEFAULT_AMPLITUDE))
             }
             else {
-                vibrator.vibrate(20)
+                vibrator.vibrate(25)
             }
         }
         else{
