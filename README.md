@@ -1,5 +1,5 @@
 # CalC-Calculator
-## Simple Calculato made in Kotlin!
+## Simple Calculator made in Kotlin!
 A Beginner Calculator app made in Kotlin!
 Do the math with Cal C from One Silicon Diode.
 
