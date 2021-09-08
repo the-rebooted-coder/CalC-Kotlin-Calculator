@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
         if (isFirstTime()) {
             val dialogBuilder = AlertDialog.Builder(this)
-            dialogBuilder.setMessage("Press the Volume Up and Down buttons to Enable or Disable Button Vibrations")
+            dialogBuilder.setMessage("Tap the Volume buttons to Enable or Disable Vibrations")
                 // if the dialog is cancelable
                 .setCancelable(false)
                 .setPositiveButton("Okay!") { dialog, id ->
